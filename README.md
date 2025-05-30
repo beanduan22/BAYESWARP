@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 ```bash
 cd data
-bash prepare_data.sh
+run mnist/cifar10.py
 ```
 
 ### ImageNet
