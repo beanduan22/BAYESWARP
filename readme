@@ -1,5 +1,3 @@
----
-
 # BayesWarp
 
 **BayesWarp** is a principled framework for white-box testing of deep neural networks, leveraging Bayesian optimization and interpretability techniques to systematically uncover diverse model failures while keeping generated samples close to the original data distribution.
@@ -86,5 +84,4 @@ Evaluation scripts and metrics are provided for NoF, DoF, Seed Coverage, and FID
 
 All scripts for training, testing, and evaluation are provided to facilitate reproducibility.
 
----
 
