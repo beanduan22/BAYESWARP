@@ -1,12 +1,12 @@
 # BayesWarp
 
-**BayesWarp** is a principled framework for white-box testing of deep neural networks, leveraging Bayesian optimization and interpretability techniques to systematically uncover diverse model failures while keeping generated samples close to the original data distribution.
+**BayesWarp** is a framework for white-box testing of deep neural networks, leveraging Bayesian optimization and interpretability techniques to systematically uncover diverse model failures while keeping generated samples close to the original data distribution.
 
 ---
 
 ## 🚩 Key Features
 
-* **Principled Failure Discovery:**
+* **Failure Discovery:**
   Region localization via GradCAM, Integrated Gradients, and SmoothGrad, focusing search on critical input areas.
 * **Bayesian Optimization:**
   Adaptive, SVGP-accelerated perturbation search to expose diverse and realistic model failures.
