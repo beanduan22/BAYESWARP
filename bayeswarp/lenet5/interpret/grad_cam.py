@@ -67,7 +67,7 @@ class GradCAM:
 
         cam_min, cam_max = cam.min(), cam.max()
         cam = (cam - cam_min) / (cam_max - cam_min + 1e-8)
-        region_mask = (cam > threshold).float()  # 二值化
+        region_mask = (cam > threshold).float()
 
         for h in self.hook_handles:
             h.remove()
