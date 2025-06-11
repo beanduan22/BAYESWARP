@@ -32,17 +32,8 @@ class SmoothGrad:
             grads.append(noisy_input.grad.detach().clone())
 
         avg_grad = torch.stack(grads, dim=0).mean(dim=0)  # [1, C, H, W]
-        # 取绝对值求范数（可选，提升鲁棒性）
         abs_avg_grad = avg_grad.abs().mean(dim=1, keepdim=True)  # [1, 1, H, W]
         norm = (abs_avg_grad - abs_avg_grad.min()) / (abs_avg_grad.max() - abs_avg_grad.min() + 1e-8)
         region_mask = (norm > threshold).float()  # [1, 1, H, W]
         return region_mask
 
-
-#if __name__ == "__main__":
-#    import torchvision.models as models
-#    model = models.resnet18(pretrained=True).eval().cuda()
-#    dummy = torch.rand(1, 3, 224, 224).cuda()
-#    sg = SmoothGrad(model)
-#    mask = sg.get_critical_region(dummy, target_class=0)
-#    print(mask.shape)  # 应为 [1, 1, 224, 224]
