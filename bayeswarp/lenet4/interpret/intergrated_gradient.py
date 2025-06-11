@@ -38,7 +38,7 @@ class IntegratedGradients:
 
         ig_min, ig_max = ig.min(), ig.max()
         norm = (ig - ig_min) / (ig_max - ig_min + 1e-8)
-        region_mask = (norm > threshold).float()  # 二值化
+        region_mask = (norm > threshold).float()
 
         return region_mask
 
